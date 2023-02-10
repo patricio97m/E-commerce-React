@@ -10,3 +10,8 @@
     height: 13em;
     width: 13em;
 }
+.cartWidget{
+    position: relative;
+    left: 4em;
+    top: 1em
+}

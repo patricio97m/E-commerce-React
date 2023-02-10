@@ -4,15 +4,17 @@ import SearchBar from "../SearchBar/SearchBar";
 import Categories from "../Categories/Categories";
 import CartWidget from "../CartWidget/CartWidget";
 
-const Navbar = ({searchBarSize, amountCart}) => {
+const Navbar = ({ searchBarSize, amountCart }) => {
   return (
     <div className="nav">
       <img src={logo} alt="logo" />
       <div>
-        <SearchBar size = {`${searchBarSize}`} />
+        <SearchBar size={`${searchBarSize}`} />
         <Categories />
       </div>
-      <CartWidget amount = {`${amountCart}`} />
+      <div className="cartWidget">
+        <CartWidget amount={`${amountCart}`} />
+      </div>
     </div>
   );
 };

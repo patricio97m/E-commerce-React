@@ -1,15 +1,18 @@
-import './cartWidget.css'
-import cartImg from '../img/icono-carrito.png'
+import "./cartWidget.css";
+import cartImg from "../img/icono-carrito.png";
 
-const CartWidget = ({amount}) => {
-    const cant = amount ? amount:0;
+const CartWidget = ({ amount }) => {
+  const redCircle = <div className="cantidad">{amount}</div>;
+  const noCircle = <div className="noNumber"></div> ;
 
-    return <div className= "cart">
-    <div className= "cart"></div>
-        <a href="#cart"><img src= {cartImg} alt="carrito" />
-            <div className="cantidad">{`${cant}`}</div>
+    return (
+      <div className="cart">
+        <a href="#cart">
+          <img src={cartImg} alt="carrito" />
+          {amount == 0 ? noCircle : redCircle}
         </a>
-    </div>
-}
+      </div>
+    );
+  }
 
 export default CartWidget;

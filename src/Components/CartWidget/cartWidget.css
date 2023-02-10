@@ -5,20 +5,20 @@
 .cart img {
     height: 3em;
     width: 3em;
-    position: absolute;
-    top: 1.5em;
-    right: 2em;
 }
 
 .cantidad{
-    position: absolute;
+    position: relative;
+    bottom: 4em;
+    left: 2em;
     color: white;
     z-index: 999;
     background-color: red;
     height: 1.5em;
     width: 1.5em;
     border-radius: 50%;
-    top: 0.7em;
-    right: 1.4em;
-    text-align: center;
+}
+.noNumber{
+    height: 1.5em;
+    width: 1.5em;
 }

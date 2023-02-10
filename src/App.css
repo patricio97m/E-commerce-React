@@ -6,14 +6,13 @@
 
 .products {
   padding: 1em;
-  color: white;
   text-align: left;
-  background-color: #282c34;
+  color: white;
 }
 * {
   font-family: "Manrope", sans-serif;
   font-family: "Rubik", sans-serif;
 }
-main{
+body{
   background-color: #282c34;
 }
