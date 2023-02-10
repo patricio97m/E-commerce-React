@@ -6,7 +6,7 @@ function App() {
   return (
     (<div className="App">
       <header>
-        <Navbar searchBarSize = {50} amountCart = {0}/>
+        <Navbar searchBarSize = {50} amountCart = {5}/>
       </header>
       <main className="products">
           <ItemListContainer greeting = {"Producto"} />
