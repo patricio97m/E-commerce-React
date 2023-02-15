@@ -9,11 +9,11 @@ const Navbar = ({ searchBarSize, amountCart }) => {
     <div className="nav">
       <img src={logo} alt="logo" />
       <div>
-        <SearchBar size={`${searchBarSize}`} />
+        <SearchBar size={searchBarSize} />
         <Categories />
       </div>
       <div className="cartWidget">
-        <CartWidget amount={`${amountCart}`} />
+        <CartWidget amount={amountCart} />
       </div>
     </div>
   );

@@ -9,10 +9,10 @@ function App() {
         <Navbar searchBarSize = {50} amountCart = {5}/>
       </header>
       <main className="products">
-          <ItemListContainer greeting = {"Producto"} />
+          <ItemListContainer greeting = "Producto" />
       </main>
       <footer>
-        
+       
       </footer>
     </div>)
   );
