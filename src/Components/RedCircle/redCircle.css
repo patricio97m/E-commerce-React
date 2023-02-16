@@ -1,0 +1,11 @@
+.cantidad{
+    position: relative;
+    bottom: 4em;
+    left: 2em;
+    color: white;
+    z-index: 999;
+    background-color: red;
+    height: 1.5em;
+    width: 1.5em;
+    border-radius: 50%;
+}

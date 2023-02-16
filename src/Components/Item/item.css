@@ -1,0 +1,22 @@
+.card {
+  width: calc(25% - 30px);
+  margin: 0 15px 30px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  padding: 15px;
+  padding: 1em;
+  text-align: left;
+  color: white;
+}
+.itemCount{
+  float: right;
+}
+.product-image{
+  width: 100%;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.product-image img {
+  max-width: 100%;
+  max-height: 200px;
+}

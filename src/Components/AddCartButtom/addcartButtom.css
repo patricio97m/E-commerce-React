@@ -1,0 +1,15 @@
+.add-button {
+    width: 37px;
+    height: 27px;
+    background-color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  .add-button img {
+    position: relative;
+    top: 2px;
+    width: 23px;
+    height: 20px;
+  }

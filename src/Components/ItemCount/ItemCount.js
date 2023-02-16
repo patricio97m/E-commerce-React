@@ -1,10 +1,9 @@
 import "./itemCount.css";
 import React, { useState } from "react";
-import cartAdd from "../img/cart-add.svg";
+import AddCartButtom from '../AddCartButtom/AddCartButtom' 
 
 function ItemCount({ productStock }) {
   const [count, setCount] = useState(0);
-  const [desiredCount, setDesiredCount] = useState(null);
 
   const Increment = () => {
     if (count < productStock) {
@@ -18,11 +17,6 @@ function ItemCount({ productStock }) {
     }
   };
 
-  const handleSave = () => {
-    setDesiredCount(count);
-    setCount(count - count);
-  };
-
   return (
       <div className="counter-container">
         <div className="counter">
@@ -31,9 +25,7 @@ function ItemCount({ productStock }) {
           <button className="counter-button" onClick={Increment}>+</button>
         </div>
         <div>
-          <button className="add-button" onClick={handleSave}>
-            {<img src={cartAdd} alt="logo" />}
-          </button>
+          <AddCartButtom/>
         </div>
       </div>
   );

@@ -1,16 +1,15 @@
 import "./cartWidget.css";
 import cartImg from "../img/icono-carrito.png";
+import RedCircle from '../RedCircle/RedCircle'
 
 const CartWidget = ({ amount }) => {
-  const redCircle = <div className="cantidad">{amount}</div>;
   const noCircle = <div className="noNumber"></div> ;
-  
 
     return (
       <div className="cart">
         <a href="#cart">
           <img src={cartImg} alt="carrito" />
-          {amount === 0 ? noCircle : redCircle}
+          {amount === 0 ? noCircle : <RedCircle  amount = {4}/>}
         </a>
       </div>
     );

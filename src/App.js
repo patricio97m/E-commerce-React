@@ -4,17 +4,17 @@ import ItemListContainer from "./Components/ItemListContainer/ItemListContainer"
 
 function App() {
   return (
-    (<div className="App">
+    <div className="App">
       <header>
-        <Navbar searchBarSize = {50} amountCart = {5}/>
+        <Navbar searchBarSize={50} />
       </header>
+      
       <main className="products">
-          <ItemListContainer greeting = "Producto" />
+        <h1>Productos destacados</h1>
+        <ItemListContainer />
       </main>
-      <footer>
-       
-      </footer>
-    </div>)
+      <footer></footer>
+    </div>
   );
 }
 

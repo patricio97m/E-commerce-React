@@ -1,14 +1,10 @@
-import "./itemListContainer.css";
-import ItemCount from "../ItemCount/ItemCount";
+import ItemList from '../ItemList/ItemList'
+import products from '../products.json'
 
-const ItemListContainer = ({ greeting }) => {
-  const saludo = greeting ? greeting : "Indefinido";
-
+const ItemListContainer = () => {
   return (
-    <div className="card">
-      <h2> {saludo} </h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-      <ItemCount productStock={10} />
+    <div>
+      <ItemList products = {products} />
     </div>
   );
 };

@@ -1,11 +1,30 @@
-.search {
+.small, .medium, .big{
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.search input{
+.small input{
     height: 33px;
+    width: 25%;
+    font-size: 17px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px 0px 0px 10px;
+    text-indent: 0.5em;
+}
+.medium input{
+    height: 33px;
+    width: 50%;
+    font-size: 17px;
+    border: solid;
+    border-width: 1px;
+    border-radius: 10px 0px 0px 10px;
+    text-indent: 0.5em;
+}
+.big input{
+    height: 33px;
+    width: 100%;
     font-size: 17px;
     border: solid;
     border-width: 1px;
@@ -13,7 +32,7 @@
     text-indent: 0.5em;
 }
 
-.search button {
+.small button, .medium button, .big button {
     width: 40px;
     height: 39px;
     left: 9px;
@@ -29,7 +48,7 @@
     background-position: center;
 }
 
-.search button:hover{
+.small button:hover, .medium button:hover, .big button:hover{
     background: gainsboro;
     background-image: url(../img/lupa.svg);
     background-size: 30px 30px;

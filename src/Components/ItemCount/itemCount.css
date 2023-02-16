@@ -1,50 +1,36 @@
 .counter {
-    display: flex;
-    color: black;
-    align-items: center;
-    justify-content: space-between;
-    width: 65px;
-    height: 25px;
-    font-size: 15px;
-    margin: 3px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-  }
-  
-  .counter-button {
-    justify-content: center;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    border: none;
-    border-radius: 20px;
-    color: black;
-    font-size: 15px;
-    cursor: pointer;
-  }
-  .add-button{
-    width: 37px;
-    height: 27px;
-    background-color: white;
-    border: none;
-    border-radius: 10px;
-    font-size: 20px;
-    cursor: pointer;
-  }
-  .add-button img {
-    position: relative;
-    top: 2px;
-    width: 23px;
-    height: 20px;
-  }
+  display: flex;
+  color: black;
+  align-items: center;
+  justify-content: space-between;
+  width: 65px;
+  height: 25px;
+  font-size: 15px;
+  margin: 3px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: white;
+}
 
-  .counter-container{
-    display: flex;
-    align-items: center;
-    gap: 3px;
-  }
-  
-  .counter-button:hover, .save-button:hover {
-    background-color: gainsboro;
-  }
+.counter-button {
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border: none;
+  border-radius: 20px;
+  color: black;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.counter-container {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.counter-button:hover,
+.add-button:hover {
+  background-color: gainsboro;
+}

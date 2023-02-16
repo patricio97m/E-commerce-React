@@ -1,9 +1,0 @@
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    width: 20%;
-    padding: 1em;
-    border-style: solid;
-    border-width: 1px;
-    border-radius: 10px;
-}
