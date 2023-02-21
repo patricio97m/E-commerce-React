@@ -9,7 +9,7 @@ const ItemList = ({ products }) => {
     const promise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(products);
-      }, 2000);
+      },);
     });
     promise.then((res) => {
       setList(res);
