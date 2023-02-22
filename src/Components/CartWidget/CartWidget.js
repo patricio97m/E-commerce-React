@@ -1,4 +1,3 @@
-import "./cartWidget.css";
 import cartImg from "../img/icono-carrito.png";
 import RedCircle from '../RedCircle/RedCircle'
 

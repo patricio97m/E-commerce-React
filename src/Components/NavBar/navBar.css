@@ -1,19 +1,4 @@
-.nav{
-    display: flex;
-    justify-content:space-between;
-    background-color: #6096B4;
-    padding: 1em;
+.imgLogo{
     height: 4em;
-    align-items: center;
-}
-.nav img{
-    height: 13em;
-    width: 13em;
-}
-.cartWidget{
-    position: relative;
-    top: 1em
-}
-.searchCategory{
-    width: 32%;
+    width: 7em;
 }

@@ -1,11 +1,17 @@
-import './searchBar.css';
+import "./searchBar.css";
 
-const SearchBar = ({ size }) => {
-    const sizeclass = size ? size : "small"
-   
-    return <div className = {sizeclass}>
-        <input type="text" name="buscar" id="buscar" placeholder="Buscar..." />
-        <button></button>
-    </div>
-}
+const SearchBar = () => {
+
+  return (
+    <form className = "d-flex big" >
+      <input
+        className="form-control me-1"
+        type="search"
+        placeholder="Buscar..."
+        aria-label="Search"
+      />
+      <button className="btn btn btn-outline-secondary" type="submit"></button>
+    </form>
+  );
+};
 export default SearchBar;

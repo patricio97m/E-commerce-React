@@ -1,6 +1,5 @@
 import Item from "../Item/Item";
 import { useEffect, useState } from "react";
-import "./itemList.css";
 
 const ItemList = ({ products }) => {
   const [list, setList] = useState([]);
@@ -17,10 +16,11 @@ const ItemList = ({ products }) => {
   });
 
   return (
-    <div className="container">
+    <div className="row mt-3">
       {list.map((item) => (
         <Item
-          key={item.id}
+          key={item.id} 
+          idProp={item.id}
           title={item.title}
           description={item.description}
           price={item.price}

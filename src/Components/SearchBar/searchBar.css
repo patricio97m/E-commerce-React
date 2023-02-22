@@ -1,35 +1,5 @@
-.small, .medium, .big{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.small input{
-    height: 33px;
-    width: 25%;
-    font-size: 17px;
-    border: solid;
-    border-width: 1px;
-    border-radius: 10px 0px 0px 10px;
-    text-indent: 0.5em;
-}
-.medium input{
-    height: 33px;
-    width: 50%;
-    font-size: 17px;
-    border: solid;
-    border-width: 1px;
-    border-radius: 10px 0px 0px 10px;
-    text-indent: 0.5em;
-}
 .big input{
-    height: 33px;
-    width: 100%;
-    font-size: 17px;
-    border: solid;
-    border-width: 1px;
-    border-radius: 10px 0px 0px 10px;
-    text-indent: 0.5em;
+    width: 30em;
 }
 
 .small button, .medium button, .big button {
