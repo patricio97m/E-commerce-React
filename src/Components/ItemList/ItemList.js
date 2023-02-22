@@ -16,7 +16,7 @@ const ItemList = ({ products }) => {
   });
 
   return (
-    <div className="row mt-3">
+    <div className="row mt-3 ">
       {list.map((item) => (
         <Item
           key={item.id} 

@@ -22,9 +22,9 @@ const Navbar = () => {
           <Nav className="me-auto">
             <SearchBar />
           </Nav>
-          <Nav className="me-auto d-flex mt-3 ">
-          <CartWidget />
-        </Nav>
+          <Nav className="ms-auto mt-3 me-3">
+            <CartWidget />
+          </Nav>
         </Navbar2.Collapse>
       </Container>
     </Navbar2>
