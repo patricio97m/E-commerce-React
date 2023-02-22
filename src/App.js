@@ -2,10 +2,11 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Navbar from "./Components/NavBar/NavBar";
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import Footer from "./Components/Footer/Footer";
 
 function App() {
   return (
-    <div className="">
+    <div>
       <header>
         <Navbar />
       </header>
@@ -20,7 +21,10 @@ function App() {
           <ItemListContainer />
         </div>
       </main>
-      <footer></footer>
+      
+      <footer>
+        <Footer/>
+      </footer>
     </div>
   );
 }

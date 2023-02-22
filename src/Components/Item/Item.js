@@ -13,10 +13,12 @@ const Item = ({ idProp, title, price, stock, image }) => {
     <div className="col-7 col-sm-7 col-md-5 col-lg-3 mx-auto">
       <div className="card m-2 cardBig" style={{ width: "18rem" }}>
         <a href="#modal" onClick={handleShow}>
-          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage" />
+          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"/>
         </a>
         <div className="card-body">
-          <h2 className="card-title">{title}</h2>
+          <a href="#modal" onClick={handleShow} className="text-decoration-none">
+            <h2 className="card-title">{title}</h2>
+          </a>
           <div>
             <p className="card-text">${price}</p>
           </div>
@@ -25,7 +27,7 @@ const Item = ({ idProp, title, price, stock, image }) => {
           </div>
         </div>
       </div>
-      <ItemDetailContainer show = {show} handleClose = {handleClose} idProp = {idProp} />
+      <ItemDetailContainer show={show} handleClose={handleClose} idProp={idProp}/>
     </div>
   );
 };

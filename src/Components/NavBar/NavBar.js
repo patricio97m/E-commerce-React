@@ -3,41 +3,31 @@ import logo from "../img/logo.png";
 import SearchBar from "../SearchBar/SearchBar";
 import Categories from "../Categories/Categories";
 import CartWidget from "../CartWidget/CartWidget";
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar2 from "react-bootstrap/Navbar";
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg">
-      <div className="container-fluid ">
-        <a className="navbar-brand" href="#menu">
+    <Navbar2 bg="light" expand="lg">
+      <Container fluid>
+        <Navbar2.Brand href="#home">
           <img src={logo} alt="logo" className="imgLogo img-fluid" />
-        </a>
-
-        <div className="collapse navbar-collapse" id="navbarSupportedContent">
-          <Categories />
-        </div>
-        <div className="collapse navbar-collapse " id="navbarSupportedContent">
-          <SearchBar />
-        </div>
-        <div className=" navbar-collapse d-flex justify-content-end">
-          <div className="mt-3">
-            <CartWidget />
-          </div>
-          <div>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#navbarSupportedContent"
-              aria-controls="navbarSupportedContent"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </nav>
+        </Navbar2.Brand>
+        <Navbar2.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar2.Collapse id="basic-navbar-nav">
+          <Nav className="me-auto">
+            <Categories />
+          </Nav>
+          <Nav className="me-auto">
+            <SearchBar />
+          </Nav>
+          <Nav className="me-auto d-flex mt-3 ">
+          <CartWidget />
+        </Nav>
+        </Navbar2.Collapse>
+      </Container>
+    </Navbar2>
   );
 };
 
