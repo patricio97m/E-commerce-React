@@ -10,8 +10,8 @@ const Item = ({ idProp, title, price, stock, image }) => {
   const handleShow = () => setShow(true);
 
   return (
-    <div className="col-7 col-sm-7 col-md-5 col-lg-3 mx-auto">
-      <div className="card m-2 cardBig mx-auto" style={{ width: "18rem" }}>
+    <div className="col-12 col-sm-7 col-md-5 col-lg-3  mx-auto d-flex ">
+      <div className="card m-2 cardBig mx-auto">
         <a href="#modal" onClick={handleShow}>
           <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"/>
         </a>

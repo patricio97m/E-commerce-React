@@ -11,13 +11,13 @@ function App() {
         <Navbar />
       </header>
 
-      <main className="bg-dark pt-3">
-        <div class="text-center">
+      <main className="bg-dark pt-3 background">
+        <div className="text-center">
           <h1 className="bg-light text-uppercase d-inline px-3">
             Productos destacados
           </h1>
         </div>
-        <div className="container mt-4">
+        <div className="container mt-4 background2 p-1">
           <ItemListContainer />
         </div>
       </main>

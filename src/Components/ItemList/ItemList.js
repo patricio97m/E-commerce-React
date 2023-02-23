@@ -8,7 +8,7 @@ const ItemList = ({ products }) => {
     const promise = new Promise((resolve) => {
       setTimeout(() => {
         resolve(products);
-      },);
+      });
     });
     promise.then((res) => {
       setList(res);
@@ -16,10 +16,10 @@ const ItemList = ({ products }) => {
   });
 
   return (
-    <div className="row mt-3 ">
+    <div className="row mt-3">
       {list.map((item) => (
         <Item
-          key={item.id} 
+          key={item.id}
           idProp={item.id}
           title={item.title}
           description={item.description}
