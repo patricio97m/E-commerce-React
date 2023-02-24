@@ -1,30 +1,26 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { Route, Routes, BrowserRouter } from "react-router-dom";
 import Navbar from "./Components/NavBar/NavBar";
-import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
+import Home from "./routes/Home/Home";
+import Categories from "./routes/Categories/Categories";
+import SearchResults from "./routes/SearchResults/SearchResults";
 import Footer from "./Components/Footer/Footer";
+import SpecificProduct from "./routes/SpecificProduct/SpecificProduct";
 
 function App() {
   return (
     <div>
-      <header>
+      <BrowserRouter>
         <Navbar />
-      </header>
-
-      <main className="bg-dark pt-3 background">
-        <div className="text-center">
-          <h1 className="bg-light text-uppercase d-inline px-3">
-            Productos destacados
-          </h1>
-        </div>
-        <div className="container mt-4 background2 p-1">
-          <ItemListContainer />
-        </div>
-      </main>
-      
-      <footer>
-        <Footer/>
-      </footer>
+        <Routes>
+          <Route exact path="/" element={<Home/>} />
+          <Route exact path="/product/:productID" element={<SpecificProduct/>} />
+          <Route exact path="/products/:search" element={<SearchResults/>} />
+          <Route exact path="/categories/:specificCategory" element={<Categories/>} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
     </div>
   );
 }

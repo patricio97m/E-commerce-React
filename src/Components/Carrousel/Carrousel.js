@@ -14,7 +14,7 @@ function Carrousel({ images }) {
     <Carousel>
       {pictures.map((item, index) => (
         <Carousel.Item key={index}> 
-          <img className="d-block w-100" src={item} alt="First slide" />
+          <img className="d-block w-100" src={item} alt="First slide"/>
         </Carousel.Item>
       ))}
     </Carousel>

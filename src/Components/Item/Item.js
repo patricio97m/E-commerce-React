@@ -1,24 +1,20 @@
 import "./item.css";
 import ItemCount from "../ItemCount/ItemCount";
-import ItemDetailContainer from "../ItemDetailContainer/ItemDetailContainer";
-import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Item = ({ idProp, title, price, stock, image }) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
   return (
     <div className="col-12 col-sm-7 col-md-5 col-lg-3  mx-auto d-flex ">
       <div className="card m-2 cardBig mx-auto">
-        <a href="#modal" onClick={handleShow}>
-          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"/>
-        </a>
+        <Link to={`/product/${idProp}`}>
+          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"
+          />
+        </Link>
         <div className="card-body">
-          <a href="#modal" onClick={handleShow} className="text-decoration-none">
+          <Link to={`/product/${idProp}`} className="text-decoration-none">
             <h2 className="card-title">{title}</h2>
-          </a>
+          </Link>
           <div>
             <p className="card-text">${price}</p>
           </div>
@@ -27,7 +23,6 @@ const Item = ({ idProp, title, price, stock, image }) => {
           </div>
         </div>
       </div>
-      <ItemDetailContainer show={show} handleClose={handleClose} idProp={idProp}/>
     </div>
   );
 };
