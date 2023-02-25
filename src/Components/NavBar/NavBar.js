@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <header>
+    <header className="sticky-top">
       <Navbar2 bg="light" expand="lg">
         <Container fluid>
           <Navbar2.Brand>

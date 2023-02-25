@@ -25,6 +25,7 @@ const SearchBar = () => {
         aria-label="Search"
         onChange={submitChange}
         value={searchTerm}
+        required
       />
       <button className="btn btn btn-outline-secondary" type="submit"></button>
     </form>
