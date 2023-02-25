@@ -7,7 +7,7 @@ const SearchResults = () => {
   return (
     <main className="bg-dark pt-3 background">
       <div className="text-center">
-        <h1 className="bg-light text-uppercase d-inline px-3">
+        <h1 className="bg-light text-uppercase d-inline px-3 rounded">
           Resultados de "{search}"
         </h1>
       </div>

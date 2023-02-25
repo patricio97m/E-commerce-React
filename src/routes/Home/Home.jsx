@@ -8,7 +8,7 @@ const Home = () => {
           Productos destacados
         </h1>
       </div>
-      <div className="container mt-4 background2 d-flex">
+      <div className="container mt-4 background2 d-flex rounded">
         <ItemListContainer />
       </div>
     </main>
