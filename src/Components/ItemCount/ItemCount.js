@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import AddCartButtom from "../AddCartButtom/AddCartButtom";
 
 function ItemCount({ productStock }) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const Increment = () => {
     if (count < productStock) {
