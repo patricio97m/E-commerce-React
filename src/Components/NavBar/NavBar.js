@@ -14,7 +14,7 @@ const Navbar = () => {
       <Navbar2 bg="light" expand="lg">
         <Container fluid>
           <Navbar2.Brand>
-            <Link to= "/">
+            <Link to="/">
               <img src={logo} alt="logo" className="imgLogo img-fluid" />
             </Link>
           </Navbar2.Brand>
@@ -27,7 +27,9 @@ const Navbar = () => {
               <SearchBar />
             </Nav>
             <Nav className="ms-auto mt-3 me-3">
-              <CartWidget />
+              <Link to="/cart">
+                <CartWidget />
+              </Link>
             </Nav>
           </Navbar2.Collapse>
         </Container>

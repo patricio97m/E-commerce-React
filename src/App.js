@@ -7,6 +7,7 @@ import Categories from "./routes/Categories/Categories";
 import SearchResults from "./routes/SearchResults/SearchResults";
 import Footer from "./Components/Footer/Footer";
 import SpecificProduct from "./routes/SpecificProduct/SpecificProduct";
+import Cart from './routes/Cart/Cart'
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route exact path="/product/:productID" element={<SpecificProduct/>} />
           <Route exact path="/products/:search" element={<SearchResults/>} />
           <Route exact path="/categories/:specificCategory" element={<Categories/>} />
+          <Route exact path="/cart" element={<Cart/>} />
         </Routes>
         <Footer />
       </BrowserRouter>

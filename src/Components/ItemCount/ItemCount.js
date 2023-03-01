@@ -1,8 +1,8 @@
 import "./itemCount.css";
 import React, { useState } from "react";
-import AddCartButtom from "../AddCartButtom/AddCartButtom";
+import cartAdd from "../img/cart-add.svg";
 
-function ItemCount({ productStock }) {
+function ItemCount({ productStock, onAdd }) {
   const [count, setCount] = useState(1);
 
   const Increment = () => {
@@ -17,6 +17,11 @@ function ItemCount({ productStock }) {
     }
   };
 
+  const AddToCart = () => {
+    onAdd(count);
+    setCount(1);
+  };
+
   return (
     <div className="counter-container position-absolute bottom-0 end-0">
       <div className="counter">
@@ -24,8 +29,10 @@ function ItemCount({ productStock }) {
         <p>{count}</p>
         <button className="counter-button" onClick={Increment}>+</button>
       </div>
-      <div  >
-        <AddCartButtom />
+      <div>
+        <button className="add-button " onClick={AddToCart}>
+          {<img src={cartAdd} alt="logo" />}
+        </button>
       </div>
     </div>
   );

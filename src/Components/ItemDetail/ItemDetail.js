@@ -1,25 +1,14 @@
-import './itemDetail.css'
-import Button from "react-bootstrap/Button";
+import "./itemDetail.css";
 import Carrousel from "../Carrousel/Carrousel";
-import InputGroup from "react-bootstrap/InputGroup";
-import Form from "react-bootstrap/Form";
+import ItemCount2 from "../ItemCount2/ItemCount2";
 import { useState } from "react";
 
 const ItemDetail = ({ title, description, price, stock, images }) => {
-  const AddToCart = () => {};
+  /*La variable cartItemCount es la encargada de almacenar el número de productos que vienen de ItemCount2*/
+  const [cartItemCount, setCartItemCount] = useState(0);
 
-  const [count, setCount] = useState(1);
-
-  const Increment = () => {
-    if (count <  stock ) {
-      setCount(count + 1);
-    }
-  };
-
-  const Decrement = () => {
-    if (count > 1) {
-      setCount(count - 1);
-    }
+  const AddToCart = (count) => {
+    setCartItemCount(count);
   };
 
   return (
@@ -33,14 +22,7 @@ const ItemDetail = ({ title, description, price, stock, images }) => {
           <p className="lead text-light">{description}</p>
           <h3 className="mt-4 text-light">${price}</h3>
           <div className="d-flex align-items-center mt-4">
-            <InputGroup className="formSize">
-              <Button variant="outline-secondary" onClick={Decrement}>-</Button>
-              <Form.Control aria-label="Cantidad" value={count} className="text-center" readOnly />
-              <Button variant="outline-secondary" onClick={Increment}>+</Button>
-            </InputGroup>
-            <Button variant="primary" onClick={AddToCart}>
-              Agregar al carrito
-            </Button>
+            <ItemCount2 stock={stock} onAdd={AddToCart} />
           </div>
         </div>
       </div>

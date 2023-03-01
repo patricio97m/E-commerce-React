@@ -1,15 +1,21 @@
 import "./item.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Item = ({ idProp, title, price, stock, image }) => {
+  /*La variable cartItemCount es la encargada de almacenar el número de productos que vienen de ItemCount*/
+  const [cartItemCount, setCartItemCount] = useState(0);
+
+  const AddToCart = (count) => {
+    setCartItemCount(count);
+  };
 
   return (
     <div className="col-12 col-sm-7 col-md-5 col-lg-3  mx-auto d-flex ">
       <div className="card m-2 cardBig mx-auto">
         <Link to={`/product/${idProp}`}>
-          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"
-          />
+          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"/>
         </Link>
         <div className="card-body">
           <Link to={`/product/${idProp}`} className="text-decoration-none">
@@ -19,7 +25,7 @@ const Item = ({ idProp, title, price, stock, image }) => {
             <p className="card-text">${price}</p>
           </div>
           <div className="justify-content-end">
-            <ItemCount productStock={stock} />
+            <ItemCount productStock={stock} onAdd={AddToCart} />
           </div>
         </div>
       </div>

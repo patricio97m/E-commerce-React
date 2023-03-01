@@ -33,3 +33,18 @@
 .add-button:hover {
   background-color: gainsboro;
 }
+.add-button {
+  width: 37px;
+  height: 27px;
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 10px;
+  font-size: 20px;
+  cursor: pointer;
+}
+.add-button img {
+  position: relative;
+  bottom: 4px;
+  width: 23px;
+  height: 20px;
+}
