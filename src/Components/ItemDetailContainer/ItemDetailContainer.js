@@ -32,6 +32,7 @@ const ItemDetailContainer = () => {
           price={productKey.price}
           stock={productKey.stock}
           images={productKey.images}
+          thumbnail={productKey.thumbnail}
         />
       )}
     </>

@@ -1,14 +1,22 @@
 import "./item.css";
 import ItemCount from "../ItemCount/ItemCount";
 import { Link } from "react-router-dom";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
 const Item = ({ idProp, title, price, stock, image }) => {
-  /*La variable cartItemCount es la encargada de almacenar el número de productos que vienen de ItemCount*/
-  const [cartItemCount, setCartItemCount] = useState(0);
+  const { addItem } = useContext(CartContext);
 
   const AddToCart = (count) => {
-    setCartItemCount(count);
+    addItem(
+      {
+        id: idProp, 
+        title: title, 
+        price: price, 
+        thumbnail: image
+      },
+      count
+    );
   };
 
   return (

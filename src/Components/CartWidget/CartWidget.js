@@ -1,17 +1,22 @@
+import './CartWidget.css'
 import cartImg from "../img/icono-carrito.png";
-import RedCircle from '../RedCircle/RedCircle'
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const CartWidget = ({ amount }) => {
-  const noCircle = <div className="noNumber"></div> ;
+const CartWidget = () => {
+  const noCircle = <div className="noNumber"></div>;
+  const { getTotalQuantity } = useContext(CartContext);
 
-    return (
-      <>
-        <a href="#cart">
-          <img src={cartImg} alt="carrito" />
-          {amount === 0 ? noCircle : <RedCircle  amount = {4}/>}
-        </a>
-      </>
-    );
-  }
+  return (
+    <>
+      <img src={cartImg} alt="carrito" />
+      {getTotalQuantity() === 0 ? (
+        noCircle
+      ) : (
+        <div className="quantity">{getTotalQuantity()}</div>
+      )}
+    </>
+  );
+};
 
 export default CartWidget;

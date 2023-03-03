@@ -1,4 +1,4 @@
-.cantidad{
+.quantity{
     position: relative;
     bottom: 4em;
     left: 2em;
@@ -9,4 +9,8 @@
     width: 1.5em;
     border-radius: 50%;
     text-align: center;
+}
+.noNumber{
+    height: 1.5em;
+    width: 1.5em;
 }

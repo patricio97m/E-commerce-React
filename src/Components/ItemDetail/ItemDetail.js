@@ -1,15 +1,24 @@
 import "./itemDetail.css";
 import Carrousel from "../Carrousel/Carrousel";
 import ItemCount2 from "../ItemCount2/ItemCount2";
-import { useState } from "react";
+import { useContext } from "react";
+import { CartContext } from "../../context/CartContext";
 
-const ItemDetail = ({ title, description, price, stock, images }) => {
-  /*La variable cartItemCount es la encargada de almacenar el número de productos que vienen de ItemCount2*/
-  const [cartItemCount, setCartItemCount] = useState(0);
+const ItemDetail = ({idProp, title, description, price, stock, images, thumbnail}) => {
+  const { addItem, cart } = useContext(CartContext);
 
   const AddToCart = (count) => {
-    setCartItemCount(count);
+    addItem(
+      {
+        id: idProp, 
+        title: title, 
+        price: price, 
+        thumbnail: thumbnail
+      },
+      count
+    );
   };
+  console.log(cart);
 
   return (
     <div className="container my-4 ">
