@@ -1,9 +1,12 @@
 import "./itemCount.css";
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
+import { Overlay, Tooltip } from "react-bootstrap";
 import cartAdd from "../img/cart-add.svg";
 
 function ItemCount({ productStock, onAdd }) {
   const [count, setCount] = useState(1);
+  const [showMessage, setShowMessage] = useState(false);
+  const target = useRef(null);
 
   const Increment = () => {
     if (count < productStock) {
@@ -20,6 +23,10 @@ function ItemCount({ productStock, onAdd }) {
   const AddToCart = () => {
     onAdd(count);
     setCount(1);
+    setShowMessage(true); //Estado que habilita el overlay para indicar que se ha agregado un producto
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   };
 
   return (
@@ -30,9 +37,12 @@ function ItemCount({ productStock, onAdd }) {
         <button className="counter-button" onClick={Increment}>+</button>
       </div>
       <div>
-        <button className="add-button " onClick={AddToCart}>
+        <button ref={target} className="add-button " onClick={AddToCart}>
           {<img src={cartAdd} alt="logo" />}
         </button>
+        <Overlay target={target.current} show={showMessage} placement="top"> 
+          {(props) => <Tooltip {...props}>¡Agregado con éxito!</Tooltip>}
+        </Overlay>
       </div>
     </div>
   );

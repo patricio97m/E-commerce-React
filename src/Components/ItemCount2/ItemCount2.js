@@ -1,8 +1,10 @@
-import { Button, InputGroup, Form } from "react-bootstrap";
-import { useState } from "react";
+import { Button, InputGroup, Form, Overlay, Tooltip } from "react-bootstrap";
+import { useState, useRef } from "react";
 
 const ItemCount2 = ({ stock, onAdd }) => {
   const [count, setCount] = useState(1);
+  const [showMessage, setShowMessage] = useState(false);
+  const target = useRef(null);
 
   const Increment = () => {
     if (count < stock) {
@@ -19,6 +21,10 @@ const ItemCount2 = ({ stock, onAdd }) => {
   const AddToCart = () => {
     onAdd(count);
     setCount(1);
+    setShowMessage(true); //Estado que habilita el overlay para indicar que se ha agregado un producto
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000);
   };
 
   return (
@@ -28,9 +34,16 @@ const ItemCount2 = ({ stock, onAdd }) => {
         <Form.Control aria-label="Cantidad" value={count} className="text-center" readOnly/>
         <Button variant="outline-secondary" onClick={Increment}>+</Button>
       </InputGroup>
-      <Button variant="primary" onClick={AddToCart}>
+      <Button ref={target} variant="primary" onClick={AddToCart}>
         Agregar al carrito
       </Button>
+      <Overlay target={target.current} show={showMessage} placement="top">
+        {(props) => (
+          <Tooltip {...props}>
+           ¡Agregado con éxito!
+          </Tooltip>
+        )}
+      </Overlay>
     </>
   );
 };
