@@ -15,7 +15,7 @@ const TableRow = () => {
           <td>{product.title}</td>
           <td>{product.quantity}</td>
           <td>${product.price * product.quantity}</td>
-          <td className="trashCan text-center align-middle">
+          <td className="trashCan text-center align-middle table-danger">
             <a href="#delete" onClick={() => removeItem(product.id)}>
               <img src={trashCan} alt="trashCan" className="img-fluid" />
             </a>
