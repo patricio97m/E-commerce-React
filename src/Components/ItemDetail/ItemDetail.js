@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
 
 const ItemDetail = ({idProp, title, description, price, stock, images, thumbnail}) => {
-  const { addItem, cart } = useContext(CartContext);
+  const { addItem } = useContext(CartContext);
 
   const AddToCart = (count) => {
     addItem(
@@ -18,7 +18,6 @@ const ItemDetail = ({idProp, title, description, price, stock, images, thumbnail
       count
     );
   };
-  console.log(cart);
 
   return (
     <div className="container my-4 ">

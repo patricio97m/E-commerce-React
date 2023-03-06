@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 const CartContext = React.createContext();
 
 const CartProvider = ({ children }) => {
@@ -34,7 +33,7 @@ const CartProvider = ({ children }) => {
   };
 
   const clear = () => { // Función que borra todos los productos
-    setCart([]);
+    setCart({ cartItems: [] });
   };
 
   const getTotalQuantity = () => { //Función que se encarga de calcular la cantidad total de productos
