@@ -11,7 +11,7 @@ function Carrousel({ images }) {
   }, [images]);
 
   return (
-    <Carousel>
+    <Carousel variant="dark">
       {pictures.map((item, index) => (
         <Carousel.Item key={index}> 
           <img className="d-block w-100 rounded" src={item} alt="First slide"/>
