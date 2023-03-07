@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 
 const ItemListContainer = () => {
-  const [productList, setProductList] = useState([]);
+  const [productList, setProductList] = useState({ products: [] });
   const [isLoading, setIsLoading] = useState(true); 
   const [noResults, setNoResults] = useState(false);
   const { specificCategory, search } = useParams();

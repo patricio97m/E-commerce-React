@@ -4,7 +4,7 @@ import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from "../Spinner/Spinner";
 
 const ItemDetailContainer = () => {
-  const [productKey, setProductKey] = useState([]);
+  const [specificProduct, setSpecificProduct] = useState({ product: [] });
   const [isLoading, setIsLoading] = useState(true);
   const { productID } = useParams();
 
@@ -13,7 +13,7 @@ const ItemDetailContainer = () => {
       fetch(`https://dummyjson.com/products/${productID}`)
         .then((res) => res.json())
         .then((res) => {
-          setProductKey(res);
+          setSpecificProduct(res);
           setIsLoading(false);
         });
     }
@@ -25,14 +25,14 @@ const ItemDetailContainer = () => {
         <Spinner />
       ) : (
         <ItemDetail
-          key={productKey.id}
-          idProp={productKey.id}
-          title={productKey.title}
-          description={productKey.description}
-          price={productKey.price}
-          stock={productKey.stock}
-          images={productKey.images}
-          thumbnail={productKey.thumbnail}
+          key={specificProduct.id}
+          idProp={specificProduct.id}
+          title={specificProduct.title}
+          description={specificProduct.description}
+          price={specificProduct.price}
+          stock={specificProduct.stock}
+          images={specificProduct.images}
+          thumbnail={specificProduct.thumbnail}
         />
       )}
     </>
