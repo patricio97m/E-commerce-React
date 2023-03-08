@@ -27,7 +27,7 @@ const Navbar = () => {
               <SearchBar />
             </Nav>
             <Nav className="ms-auto mt-3 me-3">
-              <Link to="/cart">
+              <Link to="/cart" className="text-decoration-none">
                 <CartWidget />
               </Link>
             </Nav>
