@@ -2,3 +2,8 @@
     height: 4em;
     width: 7em;
 }
+@media (max-width: 991.98px) {
+    .cart-container {
+      margin-top: 7px;
+    }
+  }

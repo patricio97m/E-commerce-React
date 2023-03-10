@@ -28,7 +28,9 @@ const Navbar = () => {
             </Nav>
             <Nav className="ms-auto mt-3 me-3">
               <Link to="/cart" className="text-decoration-none">
-                <CartWidget />
+                <div className="cart-container">
+                  <CartWidget />
+                </div>
               </Link>
             </Nav>
           </Navbar2.Collapse>

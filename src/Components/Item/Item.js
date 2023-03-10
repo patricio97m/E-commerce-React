@@ -20,10 +20,10 @@ const Item = ({ idProp, title, price, stock, image }) => {
   };
 
   return (
-    <div className="col-12 col-sm-7 col-md-5 col-lg-3  mx-auto d-flex ">
-      <div className="card m-2 cardBig mx-auto">
+    <div className="col-12 col-sm-7 col-md-5 col-lg-3 mx-auto d-flex">
+      <div className="card m-2 cardBig mx-auto w-100">
         <Link to={`/product/${idProp}`}>
-          <img src={image} className="card-img-top img-fluid cardImg" alt="ProductImage"/>
+          <img src={image} className="card-img-top img-fluid cardImg mx-auto" alt="ProductImage"/>
         </Link>
         <div className="card-body">
           <Link to={`/product/${idProp}`} className="text-decoration-none">

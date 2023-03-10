@@ -1,8 +1,15 @@
 .cardImg{
-  width: 18em;
-  height: 12em;
+  width: 19em;
+  height: 13em;
 }
 .cardBig{
-  height: 25rem;
+  height: 26rem;
   width: 18rem;
+}
+
+@media (max-width: 991.98px) {
+  .cardImg{
+    width: 25em;
+    height: 17em;
+  }
 }
