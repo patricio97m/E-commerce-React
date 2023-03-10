@@ -10,7 +10,7 @@ const Categories = () => {
           {specificCategory}
         </h1>
       </div>
-      <div className="container mt-3 background2 d-flex rounded">
+      <div className="container mt-3 background2 rounded">
         <ItemListContainer />
       </div>
     </main>

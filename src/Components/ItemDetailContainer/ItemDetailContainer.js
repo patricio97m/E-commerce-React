@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import Spinner from "../Spinner/Spinner";
+import {getFirestore, getDoc, doc} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
   const [specificProduct, setSpecificProduct] = useState({ product: [] });
@@ -9,13 +10,18 @@ const ItemDetailContainer = () => {
   const { productID } = useParams();
 
   useEffect(() => {
+    const db = getFirestore();
+    const productRef = doc(db, "products", productID);
+
     if (productID) {
-      fetch(`https://dummyjson.com/products/${productID}`)
-        .then((res) => res.json())
-        .then((res) => {
-          setSpecificProduct(res);
-          setIsLoading(false);
-        });
+      getDoc(productRef).then((snapshot) => {
+        const product = {
+          id: snapshot.id,
+          ...snapshot.data(),
+        };
+        setSpecificProduct(product);
+        setIsLoading(false);
+      });
     }
   }, [productID]);
 

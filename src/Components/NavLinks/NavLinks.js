@@ -14,20 +14,20 @@ const Categories = () => {
           Smartphones
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item as={Link} to="/categories/laptops">
+        <NavDropdown.Item as={Link} to="/categories/notebooks">
           Notebooks
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item as={Link} to="/categories/fragrances">
-          Perfumes
+        <NavDropdown.Item as={Link} to="/categories/consolas">
+          Consolas de videojuegos
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item as={Link} to="/categories/skincare">
-          Cuidado de la piel
+        <NavDropdown.Item as={Link} to="/categories/televisores">
+          Televisores
         </NavDropdown.Item>
         <NavDropdown.Divider />
-        <NavDropdown.Item as={Link} to="/categories/groceries">
-          Comestibles
+        <NavDropdown.Item as={Link} to="/categories/perifericos">
+          Perifericos de PC
         </NavDropdown.Item>
       </NavDropdown>
       <Nav.Link href="#Contacto">Contacto</Nav.Link>
