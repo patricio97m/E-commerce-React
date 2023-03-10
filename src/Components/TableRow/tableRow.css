@@ -1,0 +1,13 @@
+
+.rowImage img{
+    width: 9em;
+    height: 6em;
+}
+
+@media (max-width: 991.98px) {
+    .rowImage img{
+      width: 4em;
+      height: 3em;
+    }
+  }
+  

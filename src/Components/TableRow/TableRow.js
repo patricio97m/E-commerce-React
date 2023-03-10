@@ -1,3 +1,4 @@
+import './tableRow.css'
 import trashCan from "../img/trash.png";
 import { useContext } from "react";
 import { CartContext } from "../../context/CartContext";
