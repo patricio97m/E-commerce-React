@@ -12,7 +12,8 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const db = getFirestore();
-
+    
+    //Sentencia que se encarga de filtrar los productos por su categoría
     if (specificCategory && search === undefined) {
       const category = query(
         collection(db, "products"),
@@ -26,24 +27,34 @@ const ItemListContainer = () => {
         setProductList(docs);
         setIsLoading(false);
       });
-    } else if (search !== undefined && specificCategory === undefined) {
-      const searchResults = query(
-        collection(db, "products"),
-        where("title", "array-contains", search)
-      );
+    }
+    
+    //Sentencia que se encarga de buscar los productos por su título
+    else if (search !== undefined && specificCategory === undefined) {
+      const searchToLowerCase = search.toLowerCase();
+      const searchResults = collection(db, "products");
       getDocs(searchResults).then((snapshotList) => {
-        if (snapshotList.size === 0) {
+        const docs = snapshotList.docs.map((snapshot) => ({
+          id: snapshot.id,
+          ...snapshot.data(),
+        }));
+        const filteredProducts = docs.filter((doc) => {
+          const title = doc.title.toLowerCase();
+          //Devuelve el producto si mínimo coinciden 4 palabras
+          return title.includes(searchToLowerCase) && searchToLowerCase.slice(0, 4) === title.slice(0, 4); 
+        });
+        if (filteredProducts.length === 0) {
           setNoResults(true);
         } else {
-          const docs = snapshotList.docs.map((snapshot) => ({
-            id: snapshot.id,
-            ...snapshot.data(),
-          }));
-          setProductList(docs);
+          setNoResults(false);
+          setProductList(filteredProducts);
         }
         setIsLoading(false);
       });
-    } else {
+    } 
+    
+    //Sentencia que se encarga de filtrar productos para mostrarlos en el Home
+    else {
       const productsCollection = query(
         collection(db, "products"),
         where("category", "in", ["smartphones", "notebooks"]),
