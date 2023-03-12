@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Spinner from "../Spinner/Spinner";
 import {getFirestore, collection, getDocs, query, where, limit} from "firebase/firestore";
+import { Link } from "react-router-dom";
 
 const ItemListContainer = () => {
   const [productList, setProductList] = useState({ products: [] });
@@ -79,7 +80,9 @@ const ItemListContainer = () => {
         <>
           {noResults ? (
             <h2 className="text-light text-center p-2">
-              Ningún producto coincide con su búsqueda
+            Ningún producto coincide con su búsqueda, pulse
+            <Link to="/" className="text-decoration-none">{" "}aquí</Link>{" "}
+            para volver.
             </h2>
           ) : (
             <ItemList products={productList} />
