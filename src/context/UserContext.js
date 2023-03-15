@@ -26,11 +26,15 @@ const UserProvider = ({ children }) => {
     }
 
     const logUser = () =>{
-        setIsLogged(true)
+        setIsLogged(true);
+    }
+    const sessionClose = () =>{
+      setUser(formBase);
+      setIsLogged(false);
     }
   
     return (
-      <UserContext.Provider value={{ user, setAccount, isLogged, logUser }}>
+      <UserContext.Provider value={{ user, setAccount, isLogged, logUser, sessionClose }}>
         {children}
       </UserContext.Provider>
     );

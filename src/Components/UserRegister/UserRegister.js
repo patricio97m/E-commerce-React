@@ -49,6 +49,7 @@ const UserRegister = ({ showModal, setShowModal }) => {
           addDoc(UserCollection, form).then((snapshot) => {
             setForm(formBase);
             alert("¡Usuario registrado con éxito!");
+            handleUser();
           });
         }
       }
@@ -57,7 +58,6 @@ const UserRegister = ({ showModal, setShowModal }) => {
 
   const inputChangeHandler = (ev) => {
     const { name, value } = ev.target;
-
     setForm({ ...form, [name]: value });
   };
 

@@ -38,6 +38,7 @@ const UserLogin = ({ showModal, setShowModal }) => {
           cellphone: userNew.cellphone
         })
         logUser();
+        form.user = ""; form.password = "";
         handleClose();
       } else {
         setShowUserError(true);
