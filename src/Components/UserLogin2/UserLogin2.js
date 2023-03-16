@@ -31,7 +31,7 @@ const UserLogin2 = ({ showModal, setShowModal }) => {
         if (!userSnapshot.empty) {
           alert("Logueado con éxito");
           const userData = userSnapshot.docs[0].data();
-          setAccount({userData});
+          setAccount({...userData});
           logUser();
           form.user = "";
           form.password = "";
