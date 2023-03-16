@@ -5,15 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "./myAccount.css";
 import UserLogin2 from "../../Components/UserLogin2/UserLogin2";
 import userPlaceholder from "../../Components/img/user-placeholder.png";
-import {
-  getFirestore,
-  collection,
-  query,
-  where,
-  getDocs,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
+import {getFirestore, collection, query, where, getDocs, doc, updateDoc} from "firebase/firestore";
 
 const formBase = {
   name: "",
@@ -25,7 +17,7 @@ const formBase = {
 };
 
 const MyAccount = () => {
-  const { user, isLogged, sessionClose } = useContext(UserContext);
+  const { user, isLogged, sessionClose, setUserID } = useContext(UserContext);
   const target = useRef(null);
   const [showModal, setShowModal] = useState(true);
   const [newUser, setNewUser] = useState(formBase);
@@ -41,16 +33,19 @@ const MyAccount = () => {
 
   useEffect(() => {
     const db = getFirestore();
-    const userQuery = query(
-      collection(db, "users"),
-      where("user", "==", user.user)
-    );
-    getDocs(userQuery).then((snapshot) => {
-      if (!snapshot.empty) {
-        setNewUser({ id: snapshot.docs[0].id, ...snapshot.docs[0].data() });
-      }
-    });
-  }, [user.user]);
+    if (user && user.user) {
+      const userQuery = query(
+        collection(db, "users"),
+        where("user", "==", user.user)
+      );
+      getDocs(userQuery).then((snapshot) => {
+        if (!snapshot.empty) {
+          setUserID(snapshot.docs[0].id);
+          setNewUser({ id: snapshot.docs[0].id, ...snapshot.docs[0].data() });
+        }
+      });
+    }
+  }, [user, setUserID]);
 
   const editData = (ev) => {
     ev.preventDefault();
