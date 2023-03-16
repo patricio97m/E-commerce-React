@@ -32,7 +32,7 @@ const UserProvider = ({ children }) => {
       setUser(formBase);
       setIsLogged(false);
     }
-  
+
     return (
       <UserContext.Provider value={{ user, setAccount, isLogged, logUser, sessionClose }}>
         {children}

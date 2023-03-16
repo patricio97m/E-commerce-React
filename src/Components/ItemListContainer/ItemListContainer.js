@@ -13,7 +13,7 @@ const ItemListContainer = () => {
 
   useEffect(() => {
     const db = getFirestore();
-    
+
     //Sentencia que se encarga de filtrar los productos por su categoría
     if (specificCategory && search === undefined) {
       const category = query(
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
         setIsLoading(false);
       });
     }
-    
+
     //Sentencia que se encarga de buscar los productos por su título
     else if (search !== undefined && specificCategory === undefined) {
       const searchToLowerCase = search.toLowerCase();
@@ -42,7 +42,10 @@ const ItemListContainer = () => {
         const filteredProducts = docs.filter((doc) => {
           const title = doc.title.toLowerCase();
           //Devuelve el producto si mínimo coinciden 4 palabras
-          return title.includes(searchToLowerCase) && searchToLowerCase.slice(0, 4) === title.slice(0, 4); 
+          return (
+            title.includes(searchToLowerCase) &&
+            searchToLowerCase.slice(0, 4) === title.slice(0, 4)
+          );
         });
         if (filteredProducts.length === 0) {
           setNoResults(true);
@@ -52,8 +55,8 @@ const ItemListContainer = () => {
         }
         setIsLoading(false);
       });
-    } 
-    
+    }
+
     //Sentencia que se encarga de filtrar productos para mostrarlos en el Home
     else {
       const productsCollection = query(
@@ -80,9 +83,9 @@ const ItemListContainer = () => {
         <>
           {noResults ? (
             <h2 className="text-light text-center p-2">
-            Ningún producto coincide con su búsqueda, pulse
-            <Link to="/" className="text-decoration-none">{" "}aquí</Link>{" "}
-            para volver.
+              Ningún producto coincide con su búsqueda, pulse
+              <Link to="/" className="text-decoration-none">{" "}aquí</Link>{" "}
+              para volver.
             </h2>
           ) : (
             <ItemList products={productList} />

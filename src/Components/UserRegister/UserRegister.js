@@ -20,6 +20,7 @@ const UserRegister = ({ showModal, setShowModal }) => {
   const handleClose = () => setShowModal(false);
   const [showUserError, setShowUserError] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
+  const [loading, setLoading] = useState(false);
   
   const handleUser = () => {
     handleClose();
@@ -27,6 +28,7 @@ const UserRegister = ({ showModal, setShowModal }) => {
 
   const submitHandler = (ev) => {
     ev.preventDefault();
+    setLoading(true);
     const db = getFirestore();
     const UserCollection = collection(db, "users");
 
@@ -49,11 +51,15 @@ const UserRegister = ({ showModal, setShowModal }) => {
           addDoc(UserCollection, form).then((snapshot) => {
             setForm(formBase);
             alert("¡Usuario registrado con éxito!");
+            setShowEmailError(false);
+            setShowUserError(false);
             handleUser();
           });
         }
       }
-    );
+    ).finally(() => {
+      setLoading(false);
+    });
   };
 
   const inputChangeHandler = (ev) => {
@@ -165,8 +171,8 @@ const UserRegister = ({ showModal, setShowModal }) => {
             <Button variant="secondary" onClick={handleUser}>
               Volver
             </Button>
-            <Button variant="primary" type="submit">
-              Registrarse
+            <Button variant="primary" type="submit" disabled={loading}>
+              {loading ? "Cargando..." : "Registrarse"}
             </Button>
           </Modal.Footer>
         </Form>

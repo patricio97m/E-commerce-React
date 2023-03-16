@@ -17,35 +17,32 @@ const UserLogin2 = ({ showModal, setShowModal }) => {
   const handleClose = () => setShowModal(false);
   const [form, setForm] = useState(formBase);
   const { setAccount, logUser } = useContext(UserContext);
+  const [loading, setLoading] = useState(false);
   
   const submitHandler = (ev) => {
     ev.preventDefault();
+    setLoading(true);
     const db = getFirestore();
     const UserCollection = collection(db, "users");
-    
-    const userQuery = query(UserCollection, where("user", "==", form.user), where("password", "==", form.password));
-    getDocs(userQuery).then((userSnapshot)=>{
-      if (!userSnapshot.empty) {
-        alert("Logueado con éxito");
-        const userNew = userSnapshot.docs[0].data();
-        
-        setAccount({
-          user: userNew.user,
-          password: userNew.password,
-          name: userNew.name,
-          surname: userNew.surname,
-          email: userNew.email,
-          cellphone: userNew.cellphone
-        })
-        logUser();
-        handleClose();
-      } else {
-        setShowUserError(true);
-      }
-    })
 
-    
-    
+    const userQuery = query(UserCollection, where("user", "==", form.user), where("password", "==", form.password));
+    getDocs(userQuery)
+      .then((userSnapshot) => {
+        if (!userSnapshot.empty) {
+          alert("Logueado con éxito");
+          const userData = userSnapshot.docs[0].data();
+          setAccount({userData});
+          logUser();
+          form.user = "";
+          form.password = "";
+          handleClose();
+        } else {
+          setShowUserError(true);
+        }
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const inputChangeHandler = (ev) => {
@@ -102,8 +99,8 @@ const UserLogin2 = ({ showModal, setShowModal }) => {
             <Button variant="secondary" onClick={handleRegister}>
               Registarse
             </Button>
-            <Button variant="primary" type="submit">
-              Ingresar
+            <Button variant="primary" type="submit" disabled={loading}>
+              {loading ? "Cargando..." : "Ingresar"}
             </Button>
           </Modal.Footer>
         </Form>
