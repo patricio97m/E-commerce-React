@@ -45,14 +45,24 @@ const CartProvider = ({ children }) => {
   };
 
   const getTotalPrice = () => {
-    const totalPrice = cart.cartItems.reduce((total, item) => { //Función que suma el precio total de todos los productos
-      return total + (item.price * item.quantity);
+    const totalPrice = cart.cartItems.reduce((total, item) => {
+      //Función que suma el precio total de todos los productos
+      return total + item.price * item.quantity;
     }, 0);
     return totalPrice;
   };
 
   return (
-    <CartContext.Provider value={{ cart, addItem, removeItem, clear, getTotalQuantity, getTotalPrice }}>
+    <CartContext.Provider
+      value={{
+        cart,
+        addItem,
+        removeItem,
+        clear,
+        getTotalQuantity,
+        getTotalPrice,
+      }}
+    >
       {children}
     </CartContext.Provider>
   );

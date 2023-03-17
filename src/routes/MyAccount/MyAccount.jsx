@@ -4,8 +4,17 @@ import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import "./myAccount.css";
 import UserLogin2 from "../../Components/UserLogin2/UserLogin2";
+import OrdersTable from "../../Components/OrdersTable/OrdersTable";
 import userPlaceholder from "../../Components/img/user-placeholder.png";
-import {getFirestore, collection, query, where, getDocs, doc, updateDoc} from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  query,
+  where,
+  getDocs,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 
 const formBase = {
   name: "",
@@ -57,7 +66,10 @@ const MyAccount = () => {
       const db = getFirestore();
       const userRef = doc(db, "users", newUser.id);
       updateDoc(userRef, newUser);
-      setShowMessage(true);
+      setShowMessage(true); //Estado que habilita el overlay para indicar que se ha agregado un producto
+      setTimeout(() => {
+        setShowMessage(false);
+      }, 2000);
     }
   };
 
@@ -92,15 +104,12 @@ const MyAccount = () => {
               </InputGroup.Text>
               <Form.Control
                 className="noBorder1"
-                placeholder="Ingrese un usuario"
                 type="text"
                 aria-label="text"
                 value={newUser.user}
-                required
                 name="user"
-                onChange={inputChangeHandler}
-                readOnly={!editable ? true : false}
-                disabled={!editable ? true : false}
+                readOnly //El usuario no es editable ya que quedarían órdenes huerfanas
+                disabled
               />
             </InputGroup>
 
@@ -164,11 +173,21 @@ const MyAccount = () => {
               <Button type="submit" ref={target}>
                 {buttonText}
               </Button>
-              <Overlay target={target.current} show={showMessage} placement="top">
-                {(props) => <Tooltip {...props}>¡Actualizado con éxito!</Tooltip>}
+              <Overlay
+                target={target.current}
+                show={showMessage}
+                placement="top"
+              >
+                {(props) => (
+                  <Tooltip {...props}>¡Actualizado con éxito!</Tooltip>
+                )}
               </Overlay>
             </div>
           </Form>
+          <div className="text-center mt-3">
+            <h1 className="bg-light d-inline px-3 ">Órdenes anteriores</h1>
+          </div>
+          <OrdersTable />
         </div>
       </main>
     );

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {getFirestore, collection, addDoc, doc, updateDoc} from "firebase/firestore";
+import { getFirestore, collection, addDoc} from "firebase/firestore";
 const UserContext = React.createContext();
 
 const formBase = {
@@ -10,27 +10,10 @@ const formBase = {
   email: "",
   cellphone: "",
 };
-const orderBase = {
-  buyer: {
-    email: "",
-    name: "",
-    cellphone: "",
-  },
-  products: [
-    {
-      id: "",
-      price: "",
-      title: "",
-    },
-  ],
-  date: "",
-  total: "",
-};
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState(formBase);
   const [isLogged, setIsLogged] = useState(false);
-  const [order, setOrder] = useState(orderBase);
   const [userID, setUserID] = useState();
 
   const setAccount = (user) => { //se setean los datos desde la base de datos al navegador
@@ -43,8 +26,7 @@ const UserProvider = ({ children }) => {
       cellphone: user.cellphone,
     });
   };
-
-  const newOrder = (cart, getTotalPrice) => { //Función que se encarga de subir las órdenes a la base de datos
+    const newOrder = (cart, getTotalPrice) => { //Función que se encarga de subir las órdenes a la base de datos
     const db = getFirestore();
     const orderCollection = collection(db, "orders");
     const products = {
@@ -52,12 +34,14 @@ const UserProvider = ({ children }) => {
         id: product.id,
         price: product.price,
         title: product.title,
+        quantity: product.quantity
       }))
     };
     const date = new Date();
   
     const newOrder = {
       buyer: {
+        user: user.user,
         email: user.email,
         name: user.name,
         cellphone: user.cellphone,
@@ -67,21 +51,13 @@ const UserProvider = ({ children }) => {
       total: getTotalPrice
     };
   
-    addDoc(orderCollection, newOrder).then((snapshot) => {
-      setOrder(orderBase); 
-      const updatedUser = Object.assign({}, user, { //Se asigna los IDs de las órdenes al usuario
-        orders: [...(user.orders || []), snapshot.id],
-      });
-      setUser(updatedUser);
-      const userRef = doc(db, "users", userID);
-      updateDoc(userRef, updatedUser);
-    });
+    addDoc(orderCollection, newOrder);
   };
 
-  const logUser = () => {
+  const logUser = () => { //función que se encarga de setear que el usuario está logueado
     setIsLogged(true);
   };
-  const sessionClose = () => {
+  const sessionClose = () => { //función que setea la condición de deslogueado y vacía el usuario
     setUser(formBase);
     setIsLogged(false);
   };
