@@ -45,6 +45,7 @@ Se espera que el proyecto logre cumplir con las funcionalidades descritas, sea f
 | MyAccount         | Se visualizan todos los datos del usuario, ademas de permitir editar los datos y visualizar las órdenes emitidas                              |
 | SearchResults     | Muestra todos los artículos que coincidan con la búsqueda, osino devuelve un mensaje indicando al usuario                                     |
 | SpecificProduct   | Muestra más detalles a profundo sobre un artículo en específico, además de un carrusel con fotos                                              |
+| Contact           | Sección donde se visualiza el formulario de contacto y los links a las redes sociales                                                         |
 
 ## Tabla de contextos
 
