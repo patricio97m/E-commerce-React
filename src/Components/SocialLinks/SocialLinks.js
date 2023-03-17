@@ -1,6 +1,6 @@
 import camara from "../../Components/img/camara.svg";
 import group from "../../Components/img/group.svg";
-import phone from "../../Components/img/camara.svg";
+import phone from "../../Components/img/phone.svg";
 import { Link } from "react-router-dom";
 import "./contact.css";
 
