@@ -54,3 +54,5 @@ Se espera que el proyecto logre cumplir con las funcionalidades descritas, sea f
 | UserContext       | Contexto que provee de todas las funciones necesarias para agregar usuarios al navegador, y despliegue sus datos en el apartado *MyAccount*. También se encarga de subir las consultas a la base de datos       |
 
 ### [Gif demostrativo de la navegabilidad de la página](https://drive.google.com/file/d/12iPbv-NLi-uBkyDnT8j34VLi3PcR4x8D/view?usp=share_link ) 
+
+### [Página en Github-Pages](https://patricio97m.github.io/E-commerce-React/)
