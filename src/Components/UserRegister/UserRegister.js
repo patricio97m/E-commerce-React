@@ -21,7 +21,7 @@ const UserRegister = ({ showModal, setShowModal }) => {
   const [showUserError, setShowUserError] = useState(false);
   const [showEmailError, setShowEmailError] = useState(false);
   const [loading, setLoading] = useState(false);
-  
+
   const handleUser = () => {
     handleClose();
   };
@@ -36,8 +36,8 @@ const UserRegister = ({ showModal, setShowModal }) => {
     const emailQuery = query(UserCollection, where("email", "==", form.email));
     const userQuery = query(UserCollection, where("user", "==", form.user));
 
-    Promise.all([getDocs(emailQuery), getDocs(userQuery)]).then(
-      ([emailSnapshot, userSnapshot]) => {
+    Promise.all([getDocs(emailQuery), getDocs(userQuery)])
+      .then(([emailSnapshot, userSnapshot]) => {
         if (!emailSnapshot.empty) {
           //Si el mail se encuentra en la base de datos, se muestra un mensaje
           setShowEmailError(true);
@@ -56,10 +56,10 @@ const UserRegister = ({ showModal, setShowModal }) => {
             handleUser();
           });
         }
-      }
-    ).finally(() => {
-      setLoading(false);
-    });
+      })
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   const inputChangeHandler = (ev) => {
@@ -106,6 +106,9 @@ const UserRegister = ({ showModal, setShowModal }) => {
                 onChange={inputChangeHandler}
                 required
               />
+              <Form.Text>
+                Tenga en cuenta que esta página es solo para fines recreativos y no se debe utilizar para ingresar contraseñas reales.
+              </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3">
