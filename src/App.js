@@ -11,6 +11,7 @@ import Footer from "./Components/Footer/Footer";
 import SpecificProduct from "./routes/SpecificProduct/SpecificProduct";
 import Cart from "./routes/Cart/Cart";
 import MyAccount from "./routes/MyAccount/MyAccount";
+import Contact from "./routes/Contact/Contact"
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route exact path="/product/:productID" element={<SpecificProduct />}/>
               <Route exact path="/products/:search" element={<SearchResults />}/>
               <Route exact path="/categories/:specificCategory" element={<Categories />} />
+              <Route exact path="/contact" element={<Contact />} />
               <Route exact path="/myaccount" element={<MyAccount />} />
               <Route exact path="/cart" element={<Cart />} />
             </Routes>

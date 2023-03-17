@@ -40,7 +40,7 @@ const Categories = () => {
           Perifericos de PC
         </NavDropdown.Item>
       </NavDropdown>
-      <Nav.Link href="#Contacto">Contacto</Nav.Link>
+      <Nav.Link as={Link} to="contact">Contacto</Nav.Link>
       {isLogged ? (
         <Nav.Link as={Link} to="/myaccount">Mi cuenta</Nav.Link>
       ):(
