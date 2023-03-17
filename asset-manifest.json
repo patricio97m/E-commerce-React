@@ -1,20 +1,21 @@
 {
   "files": {
     "main.css": "/E-commerce-React/static/css/main.69d675c0.css",
-    "main.js": "/E-commerce-React/static/js/main.bbbbda8a.js",
+    "main.js": "/E-commerce-React/static/js/main.5a0e2c07.js",
     "static/js/787.8f360ba4.chunk.js": "/E-commerce-React/static/js/787.8f360ba4.chunk.js",
     "static/media/background.jpg": "/E-commerce-React/static/media/background.9cc07e6af2408c78add2.jpg",
+    "static/media/phone.svg": "/E-commerce-React/static/media/phone.6da46cd2ed856c67e6c2c06c7e00ffcb.svg",
     "static/media/group.svg": "/E-commerce-React/static/media/group.d9727638163f2edbe42d9cf4c64dcb2b.svg",
     "index.html": "/E-commerce-React/index.html",
     "static/media/camara.svg": "/E-commerce-React/static/media/camara.511058765e5ff6af11233cbd8f0f0f0e.svg",
     "static/media/cart-add.svg": "/E-commerce-React/static/media/cart-add.f075fe65e53c83cfddd25c2fc7f9d0f0.svg",
     "static/media/lupa.svg": "/E-commerce-React/static/media/lupa.6372673a240fcd5cca74.svg",
     "main.69d675c0.css.map": "/E-commerce-React/static/css/main.69d675c0.css.map",
-    "main.bbbbda8a.js.map": "/E-commerce-React/static/js/main.bbbbda8a.js.map",
+    "main.5a0e2c07.js.map": "/E-commerce-React/static/js/main.5a0e2c07.js.map",
     "787.8f360ba4.chunk.js.map": "/E-commerce-React/static/js/787.8f360ba4.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69d675c0.css",
-    "static/js/main.bbbbda8a.js"
+    "static/js/main.5a0e2c07.js"
   ]
 }
