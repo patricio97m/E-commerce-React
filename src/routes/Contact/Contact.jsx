@@ -4,30 +4,24 @@ import { getFirestore, collection, addDoc } from "firebase/firestore";
 import SocialLinks from "../../Components/SocialLinks/SocialLinks";
 import { UserContext } from "../../context/UserContext";
 
-const queryForm = {
-  name: "",
-  email: "",
-  subject: "",
-  message: "",
-};
-
 const Contact = () => {
   const target = useRef(null);
   const [showMessage, setShowMessage] = useState(false);
   const { user, isLogged } = useContext(UserContext);
 
-  const [formData, setFormData] = useState({
+  const queryForm = {
     name: isLogged ? `${user.name} ${user.surname}` : "",
     email: isLogged ? user.email : "",
     subject: "",
     message: "",
-  });
+  };
 
-  useEffect(() => { //Rellena automáticamente con tu usuario si estas loggeado
-    setFormData(prevFormData => ({
+  const [formData, setFormData] = useState(queryForm);
+
+  useEffect(() => {setFormData((prevFormData) => ({ //Rellena automáticamente con tu usuario si estas loggeado
       ...prevFormData,
       name: isLogged ? `${user.name} ${user.surname}` : "",
-      email: isLogged ? user.email : ""
+      email: isLogged ? user.email : "",
     }));
   }, [user, isLogged]);
 
