@@ -1,7 +1,8 @@
-import React, { useState, useRef } from "react";
+import { useState, useRef, useContext, useEffect } from "react";
 import {Container, Form, Button, Row, Col, Overlay, Tooltip} from "react-bootstrap";
 import { getFirestore, collection, addDoc } from "firebase/firestore";
 import SocialLinks from "../../Components/SocialLinks/SocialLinks";
+import { UserContext } from "../../context/UserContext";
 
 const queryForm = {
   name: "",
@@ -13,13 +14,22 @@ const queryForm = {
 const Contact = () => {
   const target = useRef(null);
   const [showMessage, setShowMessage] = useState(false);
+  const { user, isLogged } = useContext(UserContext);
 
   const [formData, setFormData] = useState({
-    name: "",
-    email: "",
+    name: isLogged ? `${user.name} ${user.surname}` : "",
+    email: isLogged ? user.email : "",
     subject: "",
     message: "",
   });
+
+  useEffect(() => { //Rellena automáticamente con tu usuario si estas loggeado
+    setFormData(prevFormData => ({
+      ...prevFormData,
+      name: isLogged ? `${user.name} ${user.surname}` : "",
+      email: isLogged ? user.email : ""
+    }));
+  }, [user, isLogged]);
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
@@ -35,8 +45,8 @@ const Contact = () => {
     }, 2000);
   };
 
-  const handleInputChange = (event) => {
-    const { name, value } = event.target;
+  const handleInputChange = (ev) => {
+    const { name, value } = ev.target;
     setFormData((prevFormData) => ({ ...prevFormData, [name]: value }));
   };
 
