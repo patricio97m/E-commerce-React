@@ -3,18 +3,10 @@ import { useContext, useState, useEffect, useRef } from "react";
 import { UserContext } from "../../context/UserContext";
 import { useNavigate } from "react-router-dom";
 import "./myAccount.css";
-import UserLogin2 from "../../Components/UserLogin2/UserLogin2";
+import UserLogin from "../../Components/UserLogin/UserLogin";
 import OrdersTable from "../../Components/OrdersTable/OrdersTable";
 import userPlaceholder from "../../Components/img/user-placeholder.png";
-import {
-  getFirestore,
-  collection,
-  query,
-  where,
-  getDocs,
-  doc,
-  updateDoc,
-} from "firebase/firestore";
+import {getFirestore, collection, query, where, getDocs, doc, updateDoc} from "firebase/firestore";
 
 const formBase = {
   name: "",
@@ -192,7 +184,7 @@ const MyAccount = () => {
       </main>
     );
   } else {
-    return <UserLogin2 showModal={showModal} setShowModal={setShowModal} />;
+    return <UserLogin showModal={showModal} setShowModal={setShowModal} noCloseControls={true} />;
   }
 };
 

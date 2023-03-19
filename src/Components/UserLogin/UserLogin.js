@@ -11,7 +11,7 @@ const formBase = {
   password: "",
 };
 
-const UserLogin = ({ showModal, setShowModal }) => {
+const UserLogin = ({ showModal, setShowModal, noCloseControls }) => {
   const [showModal2, setShowModal2] = useState(false);
   const [showUserError, setShowUserError] = useState(false);
   const handleClose = () => setShowModal(false);
@@ -36,8 +36,7 @@ const UserLogin = ({ showModal, setShowModal }) => {
           const userData = userSnapshot.docs[0].data();
           setAccount({...userData});
           logUser();
-          form.user = "";
-          form.password = "";
+          form.user = "";form.password = "";
           handleClose();
           setShowUserError(false);
         } else {
@@ -60,8 +59,8 @@ const UserLogin = ({ showModal, setShowModal }) => {
 
   return (
     <>
-      <Modal show={showModal} onHide={handleClose}>
-        <Modal.Header closeButton>
+      <Modal show={showModal} onHide={handleClose} backdrop={noCloseControls ? "static" : true} keyboard={noCloseControls ? false : true}> 
+        <Modal.Header closeButton={noCloseControls ? false : true}>
           <Modal.Title>Ingresá a tu cuenta</Modal.Title>
         </Modal.Header>
         <Form onSubmit={submitHandler}>
