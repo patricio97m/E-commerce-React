@@ -12,7 +12,8 @@ const SocialLinks = () => {
         <div className="text-center mt-3 d-flex justify-content-center">
           <Link
             as={Link}
-            to="https://ar.instagram.com/"
+            to="https://instagram.com/"
+            target="_blank"
             className="btn btn-warning button-height mx-2 text-light"
           >
             <img src={camara} alt="camara" /> Instagram
@@ -20,6 +21,7 @@ const SocialLinks = () => {
           <Link
             as={Link}
             to="https://facebook.com/"
+            target="_blank"
             className="btn btn-primary button-height mx-2"
           >
             <img src={group} alt="group" /> Facebook
@@ -27,6 +29,7 @@ const SocialLinks = () => {
           <Link
             as={Link}
             to="https://web.whatsapp.com/"
+            target="_blank"
             className="btn btn-success button-height mx-2"
           >
             <img src={phone} alt="phone" /> WhatsApp
