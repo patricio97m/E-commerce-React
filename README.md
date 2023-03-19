@@ -12,7 +12,7 @@ El proyecto consiste en el desarrollo de un e-commerce de tecnología, que permi
 ### [Página en Github-Pages](https://patricio97m.github.io/E-commerce-React/)
 
 ### Objetivos
-El objetivo del proyecto es crear una aplicación web atractiva y funcional que permita a los usuarios comprar productos de tecnología de manera fácil y segura.
+El objetivo del proyecto es crear una aplicación web atractiva y funcional que permita a los usuarios comprar productos de tecnología de manera fácil y segura. Además, el diseño de la aplicación web es completamente responsive, adaptándose a diferentes tamaños de pantalla y dispositivos móviles.
 
 ### Alcances
 La aplicación web contará con las funcionalidades básicas de un e-commerce, como el registro de usuarios, búsqueda y filtrado de productos, carrito de compras y registro de órdenes.
