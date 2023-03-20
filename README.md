@@ -41,11 +41,11 @@ Se espera que el proyecto logre cumplir con las funcionalidades descritas, sea f
 
 | Ruta              | Descripción                                                                                                                                   |
 | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
-| Cart              | Se visualizan todos los artículos del carrito si hay artículos en el, osino devuelve un mensaje informando de que está vacío                  |
+| Cart              | Se visualizan todos los artículos del carrito si hay artículos en el, si no, devuelve un mensaje informando de que está vacío                 |
 | Categories        | Muestra todos los artículos que coincidan con la categoría deseada                                                                            |
 | Home              | Ruta por defecto que muestra algunos artículos destacados                                                                                     |
-| MyAccount         | Se visualizan todos los datos del usuario, ademas de permitir editar los datos y visualizar las órdenes emitidas                              |
-| SearchResults     | Muestra todos los artículos que coincidan con la búsqueda, osino devuelve un mensaje indicando al usuario                                     |
+| MyAccount         | Se visualizan todos los datos del usuario, ademas de permitir editar sus datos y visualizar las órdenes emitidas                              |
+| SearchResults     | Muestra todos los artículos que coincidan con la búsqueda, si no, devuelve un mensaje indicando al usuario                                    |
 | SpecificProduct   | Muestra más detalles a profundo sobre un artículo en específico, además de un carrusel con fotos                                              |
 | Contact           | Sección donde se visualiza el formulario de contacto y los links a las redes sociales                                                         |
 
