@@ -1,4 +1,4 @@
-# Proyecto final para Coderhouse
+# Plataforma de comercio online: una solución práctica y segura para comprar productos electrónicos.
 
 ## Descripción del proyecto
 El proyecto consiste en el desarrollo de un e-commerce de tecnología, que permita a los usuarios buscar, filtrar y comprar productos de manera fácil y eficiente. La aplicación web tendrá las siguientes funcionalidades:
