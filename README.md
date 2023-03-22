@@ -1,4 +1,4 @@
-# Proyecto final para Coderhouse
+# Proyecto sobre una tienda online de tecnología. 
 
 ## Descripción del proyecto
 El proyecto consiste en el desarrollo de un e-commerce de tecnología, que permita a los usuarios buscar, filtrar y comprar productos de manera fácil y eficiente. La aplicación web tendrá las siguientes funcionalidades:
@@ -32,7 +32,7 @@ Se espera que el proyecto logre cumplir con las funcionalidades descritas, sea f
 | ------------- | --------------------------------------------------------------------------------------------------------------------------------------------- |
 | ItemList      | Se encarga de desplegar los artículos que son traidos de la base de datos en distintas *cards*, mostrando datos como su nombre, foto y precio |
 | ItemDetail    | Se encarga de desplegar los datos de un artículo en específico, mostrando a fondo más detalles                                                |
-| ProductsTable | Esta tabla se despliega en el apartado *carrito* y muestra en detalle que artículos se han agregado en el                                     |
+| ProductsTable | Esta tabla se despliega en el apartado *carrito* y muestra en detalle que artículos se han agregado en el, además de encargarse de subir las órdenes de compra a la base de datos |
 | UserRegister  | Modal que funciona como un formulario con todos los datos que son necesarios para registrarse en la página, como nombre, usuario, mail, etc.  |
 | UserLogin     | Modal que se encarga de verificar que el usuario y contraseña existan en la base de datos y los establece en el navegador                     |
 | SearchBar     | Componente que se encuentra en el *header* y se encarga de enviar los parámetros necesarios para buscar un artículo                           |
@@ -53,7 +53,7 @@ Se espera que el proyecto logre cumplir con las funcionalidades descritas, sea f
 
 | Contexto          | Descripción                                                                                                                                       |
 | -------------     | ------------------------------------------------------------------------------------------------------------------------------------------------  |
-| CartContext       | Contexto que provee de todas las funciones necesarias para agregar artículos al carrito, además de calcular totales, cantidades y limpiar datos   |
-| UserContext       | Contexto que provee de todas las funciones necesarias para agregar usuarios al navegador, y despliegue sus datos en el apartado *MyAccount*. También se encarga de subir las consultas a la base de datos       |
+| CartContext       | Contexto que provee de todas las funciones necesarias para agregar artículos al carrito, además de calcular totales, cantidades y limpiar datos |
+| UserContext       | Contexto que provee de todas las funciones necesarias para agregar usuarios al navegador, y despliegue sus datos en el apartado *MyAccount*.    |
 
 ### [Gif demostrativo de la navegabilidad de la página](https://drive.google.com/file/d/12iPbv-NLi-uBkyDnT8j34VLi3PcR4x8D/view?usp=share_link ) 
